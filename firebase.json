@@ -1,0 +1,11 @@
+{
+  "hosting": [{
+    "target": "comment-via-travis-ci",
+    "public": "dist/firebase-preview-channels-commenting-with-travic-ci",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }]
+}

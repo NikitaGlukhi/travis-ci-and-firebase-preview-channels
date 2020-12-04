@@ -1,0 +1,27 @@
+sudo: false
+language: node_js
+node_js: "12"
+
+notifications:
+  email: false
+
+git:
+  submodules: false
+
+stages:
+  - name: "Deploy to Firebase preview channel"
+    if: branch = master AND type = pull_request
+
+install:
+  - npm ci
+
+jobs:
+  - stage: "Deploy to Firebase preview channel"
+    skip_cleanup: true
+    provider: firebase
+    project: demo-project
+    before_script:
+      - sudo apt-get install jq
+      - npm install firebase-tools -g
+      - npm run build:prod
+    script: bash deploy-to-preview-channel.sh
