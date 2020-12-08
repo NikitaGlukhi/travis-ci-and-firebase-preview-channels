@@ -1,0 +1,132 @@
+[debug] [2020-12-09T08:41:20.321Z] ----------------------------------------------------------------------
+[debug] [2020-12-09T08:41:20.323Z] Command:       /home/vs/.nvm/versions/node/v12.19.0/bin/node /home/vs/.nvm/versions/node/v12.19.0/bin/firebase hosting:channel:deploy comment-via-travis-ci:test --expires 30d --token 1//09UNjcQFTVoHCCgYIARAAGAkSNwF-L9IrZbkblOaXh0gMCfGo3TYRG1MwcGck4rcXnIAGMUN7m4qEz8hi9Sl_uN-MMWckqwzPyqc --json
+[debug] [2020-12-09T08:41:20.323Z] CLI Version:   8.12.1
+[debug] [2020-12-09T08:41:20.323Z] Platform:      linux
+[debug] [2020-12-09T08:41:20.323Z] Node Version:  v12.19.0
+[debug] [2020-12-09T08:41:20.324Z] Time:          Wed Dec 09 2020 10:41:20 GMT+0200 (Eastern European Standard Time)
+[debug] [2020-12-09T08:41:20.324Z] ----------------------------------------------------------------------
+[debug] [2020-12-09T08:41:20.324Z] 
+[debug] [2020-12-09T08:41:20.330Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-09T08:41:20.330Z] > authorizing via --token option
+[debug] [2020-12-09T08:41:20.331Z] [iam] checking project comment-pr-via-travis-ci for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-12-09T08:41:20.332Z] > refreshing access token with scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-09T08:41:20.332Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-12-09T08:41:20.571Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 09 Dec 2020 08:41:20 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-09T08:41:20.575Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/comment-pr-via-travis-ci:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-12-09T08:41:21.614Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 09 Dec 2020 08:41:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=892","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-09T08:41:21.615Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project comment-pr-via-travis-ci:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2020-12-09T08:41:21.618Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/comment-pr-via-travis-ci  
+ 
+[debug] [2020-12-09T08:41:22.049Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Wed, 09 Dec 2020 08:41:22 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-09T08:41:22.049Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2020-12-09T08:41:22.050Z] HTTP Error: 403, The caller does not have permission
+[debug] [2020-12-09T08:41:22.218Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/lib/api.js:41:35)
+    at Request.self.callback (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:314:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at Request.<anonymous> (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/node_modules/request/request.js:1154:10)
+    at Request.emit (events.js:314:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at IncomingMessage.<anonymous> (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (events.js:420:28)
+    at IncomingMessage.emit (events.js:326:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:483:12)
+    at endReadableNT (_stream_readable.js:1223:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project comment-pr-via-travis-ci. Please make sure the project exists and your account has permission to access it.
+[debug] [2020-12-09T08:42:07.807Z] ----------------------------------------------------------------------
+[debug] [2020-12-09T08:42:07.809Z] Command:       /home/vs/.nvm/versions/node/v12.19.0/bin/node /home/vs/.nvm/versions/node/v12.19.0/bin/firebase hosting:channel:deploy test --only comment-via-travis-ci --expires 30d --token 1//09UNjcQFTVoHCCgYIARAAGAkSNwF-L9IrZbkblOaXh0gMCfGo3TYRG1MwcGck4rcXnIAGMUN7m4qEz8hi9Sl_uN-MMWckqwzPyqc --json
+[debug] [2020-12-09T08:42:07.809Z] CLI Version:   8.12.1
+[debug] [2020-12-09T08:42:07.809Z] Platform:      linux
+[debug] [2020-12-09T08:42:07.809Z] Node Version:  v12.19.0
+[debug] [2020-12-09T08:42:07.809Z] Time:          Wed Dec 09 2020 10:42:07 GMT+0200 (Eastern European Standard Time)
+[debug] [2020-12-09T08:42:07.810Z] ----------------------------------------------------------------------
+[debug] [2020-12-09T08:42:07.810Z] 
+[debug] [2020-12-09T08:42:07.814Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-09T08:42:07.814Z] > authorizing via --token option
+[debug] [2020-12-09T08:42:07.815Z] [iam] checking project comment-pr-via-travis-ci for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-12-09T08:42:07.816Z] > refreshing access token with scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-09T08:42:07.817Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-12-09T08:42:08.076Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","date":"Wed, 09 Dec 2020 08:42:08 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-09T08:42:08.080Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/comment-pr-via-travis-ci:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-12-09T08:42:09.092Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 09 Dec 2020 08:42:09 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=868","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-09T08:42:09.093Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project comment-pr-via-travis-ci:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2020-12-09T08:42:09.094Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/comment-pr-via-travis-ci  
+ 
+[debug] [2020-12-09T08:42:09.498Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Wed, 09 Dec 2020 08:42:09 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-09T08:42:09.498Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2020-12-09T08:42:09.500Z] HTTP Error: 403, The caller does not have permission
+[debug] [2020-12-09T08:42:09.674Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/lib/api.js:41:35)
+    at Request.self.callback (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:314:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at Request.<anonymous> (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/node_modules/request/request.js:1154:10)
+    at Request.emit (events.js:314:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at IncomingMessage.<anonymous> (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (events.js:420:28)
+    at IncomingMessage.emit (events.js:326:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:483:12)
+    at endReadableNT (_stream_readable.js:1223:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project comment-pr-via-travis-ci. Please make sure the project exists and your account has permission to access it.
+[debug] [2020-12-09T08:43:30.049Z] ----------------------------------------------------------------------
+[debug] [2020-12-09T08:43:30.051Z] Command:       /home/vs/.nvm/versions/node/v12.19.0/bin/node /home/vs/.nvm/versions/node/v12.19.0/bin/firebase hosting:channel:deploy test --expires 30d --token 1//09UNjcQFTVoHCCgYIARAAGAkSNwF-L9IrZbkblOaXh0gMCfGo3TYRG1MwcGck4rcXnIAGMUN7m4qEz8hi9Sl_uN-MMWckqwzPyqc --json
+[debug] [2020-12-09T08:43:30.051Z] CLI Version:   8.12.1
+[debug] [2020-12-09T08:43:30.051Z] Platform:      linux
+[debug] [2020-12-09T08:43:30.051Z] Node Version:  v12.19.0
+[debug] [2020-12-09T08:43:30.051Z] Time:          Wed Dec 09 2020 10:43:30 GMT+0200 (Eastern European Standard Time)
+[debug] [2020-12-09T08:43:30.052Z] ----------------------------------------------------------------------
+[debug] [2020-12-09T08:43:30.052Z] 
+[debug] [2020-12-09T08:43:30.056Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-09T08:43:30.056Z] > authorizing via --token option
+[debug] [2020-12-09T08:43:30.057Z] [iam] checking project comment-pr-via-travis-ci for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-12-09T08:43:30.058Z] > refreshing access token with scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-09T08:43:30.058Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-12-09T08:43:30.256Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","date":"Wed, 09 Dec 2020 08:43:30 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-09T08:43:30.258Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/comment-pr-via-travis-ci:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-12-09T08:43:31.295Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 09 Dec 2020 08:43:31 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=893","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-09T08:43:31.295Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project comment-pr-via-travis-ci:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2020-12-09T08:43:31.296Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/comment-pr-via-travis-ci  
+ 
+[debug] [2020-12-09T08:43:31.691Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Wed, 09 Dec 2020 08:43:31 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-09T08:43:31.691Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2020-12-09T08:43:31.693Z] HTTP Error: 403, The caller does not have permission
+[debug] [2020-12-09T08:43:31.850Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/lib/api.js:41:35)
+    at Request.self.callback (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:314:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at Request.<anonymous> (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/node_modules/request/request.js:1154:10)
+    at Request.emit (events.js:314:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at IncomingMessage.<anonymous> (/home/vs/.nvm/versions/node/v12.19.0/lib/node_modules/firebase-tools/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (events.js:420:28)
+    at IncomingMessage.emit (events.js:326:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:483:12)
+    at endReadableNT (_stream_readable.js:1223:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project comment-pr-via-travis-ci. Please make sure the project exists and your account has permission to access it.

@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "firebase-preview-channels-commenting-with-travis-ci"
+    }
+  },
+  "defaultProject": "firebase-preview-channels-commenting-with-travis-ci",
+  "cli": {
+    "analytics": "0fda4724-8b0c-4f32-9bdb-1273d47b2f0b"
+  }
 }

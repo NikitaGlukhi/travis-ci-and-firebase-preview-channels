@@ -1,14 +1,5 @@
 {
   "projects": {
-    "default": "comment-pr-via-travis-ci"
-  },
-  "targets": {
-    "fir-project-dc47e": {
-      "hosting": {
-        "comment-via-travis-ci": [
-          "comment-pr-via-travis-ci"
-        ]
-      }
-    }
+    "default": "fir-project-dc47e"
   }
 }

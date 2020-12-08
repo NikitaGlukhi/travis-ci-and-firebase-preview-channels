@@ -8,6 +8,9 @@ notifications:
 git:
   submodules: false
 
+script:
+  - echo "skipping tests"
+
 stages:
   - name: "Deploy to Firebase preview channel"
     if: branch = master AND type = pull_request
@@ -16,12 +19,13 @@ install:
   - npm ci
 
 jobs:
+  include:
   - stage: "Deploy to Firebase preview channel"
     skip_cleanup: true
     provider: firebase
-    project: demo-project
+    project: fir-project-dc47e
     before_script:
       - sudo apt-get install jq
       - npm install firebase-tools -g
       - npm run build:prod
-    script: bash deploy-to-preview-channel.sh
+    script: bash deploy-to-firebase-preview-channels.sh
